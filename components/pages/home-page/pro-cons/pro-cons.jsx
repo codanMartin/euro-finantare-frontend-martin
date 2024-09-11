@@ -1,8 +1,8 @@
+import ProMessage from "@/components/pages/home-page/pro-cons/pro-message";
+import ConMessage from "@/components/pages/home-page/pro-cons/con-message";
 import notUsingEurofinantare from "@/public/not-using-eurofinantare.jpg";
 import usingEurofinantare from "@/public/using-eurofinantare.jpg";
 import Image from "next/image";
-import ProMessage from "@/components/home-page/pro-cons/pro-message";
-import ConMessage from "@/components/home-page/pro-cons/con-message";
 
 const ProCons = () => {
 

@@ -9,7 +9,7 @@ const Header = () => {
                 <Link href="/" className="pl-[10.5px] focus-within:outline-none">
                     <LogoWithTitle className={"flex w-full"}/>
                 </Link>
-                <Link href="/formular-finantare" className="h-full group flex items-center bg-eu-blue text-white sm:text-nowrap sm:text-lg sm:font-bold">
+                <Link href="/colectare-date" className="h-full group flex items-center bg-eu-blue text-white sm:text-nowrap sm:text-lg sm:font-bold">
                         <span
                             className="px-[21px] group-hover:underline text-center">
                             Vreau finantare!

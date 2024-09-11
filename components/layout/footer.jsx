@@ -5,9 +5,11 @@ import {FaEnvelope, FaLocationDot, FaPhone} from "react-icons/fa6";
 const Footer = () => {
 
     return (
-        <footer className="border-t border-gray-300 w-full min-h-[400px] bg-[#212121] px-8 md:px-16 py-16 text-[#f9f9f9]">
+        <footer
+            className="border-t border-gray-300 w-full min-h-[400px] bg-[#212121] px-8 md:px-16 py-16 text-[#f9f9f9]">
             <div className="flex flex-col space-y-16">
-                <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row flex-1 w-full md:justify-between md:space-x-4">
+                <div
+                    className="flex flex-col space-y-4 md:space-y-0 md:flex-row flex-1 w-full md:justify-between md:space-x-4">
                     <div className="flex flex-col space-y-4 max-w-md">
                         <Link href="/" className="relative flex justify-start">
                             <LogoWithTitle inverted={true} className="flex w-[400px] h-auto"/>
@@ -22,7 +24,7 @@ const Footer = () => {
                         </div>
                         <div className="flex space-x-2 items-center">
                             <FaEnvelope className="text-3xl text-eu-blue"/>
-                            <span>contact@eurofonduri.ro</span>
+                            <span>contact@eurofinantare.ro</span>
                         </div>
                         <div className="flex space-x-2 items-center">
                             <FaLocationDot className="text-3xl text-eu-blue"/>
@@ -32,11 +34,11 @@ const Footer = () => {
                 </div>
                 <div className="flex flex-col space-y-4 flex-1 w-full">
                     <span>Copyright © 2024 EURO FONDURI SRL. Toate drepturile sunt rezervate.</span>
-                    <div className="flex space-x-2 divide-x h-min">
+                    <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2 sm:divide-x sm:h-min">
                         <Link href={"#"} className="text-nowrap hover:underline">
                             <span>Politică de Confidențialitate</span>
-                            </Link>
-                        <Link href={"#"} className="pl-2 text-nowrap hover:underline">
+                        </Link>
+                        <Link href={"#"} className="sm:pl-2 text-nowrap hover:underline">
                             <span className="self-center">Termeni și Condiții</span>
                         </Link>
                     </div>

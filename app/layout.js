@@ -1,11 +1,8 @@
-import LogoWithTitle from "@/components/layout/logo-with-title";
-import {Montserrat} from 'next/font/google';
-import Link from "next/link";
-import "./globals.css";
-import {cn} from "@/utils/utils";
-import Header from "@/components/layout/header";
-import {FaEnvelope, FaLocationDot, FaPhone} from "react-icons/fa6";
 import Footer from "@/components/layout/footer";
+import Header from "@/components/layout/header";
+import {Montserrat} from 'next/font/google';
+import {cn} from "@/utils/utils";
+import "./globals.css";
 
 const montserrat = Montserrat({
     subsets: ['latin'],

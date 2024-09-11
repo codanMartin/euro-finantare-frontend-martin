@@ -1,8 +1,8 @@
 "use client"
 
-import StepsDescription from "@/components/home-page/steps/steps-description";
-import StepContainer from "@/components/home-page/steps/step-container";
-import StepsNav from "@/components/home-page/steps/steps-nav";
+import StepsDescription from "@/components/pages/home-page/steps/steps-description";
+import StepContainer from "@/components/pages/home-page/steps/step-container";
+import StepsNav from "@/components/pages/home-page/steps/steps-nav";
 import placeholder from "@/public/placeholder.jpg"
 import {useEffect, useRef, useState} from "react";
 
