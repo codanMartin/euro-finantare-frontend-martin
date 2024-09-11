@@ -7,7 +7,7 @@ import ConMessage from "@/components/home-page/pro-cons/con-message";
 const ProCons = () => {
 
     return (
-        <div className="flex flex-col flex-1 items-center w-full px-8 md:px-16 py-16">
+        <div className="flex flex-col flex-1 items-center w-full  py-16">
             <div className="flex text-center text-2xl font-bold pb-16">
                 Lorem ipsum dolor sit amet?
             </div>

@@ -11,10 +11,6 @@ const Steps = () => {
     const observerRef = useRef(null);
 
     useEffect(() => {
-        console.log(mostVisibleContainer)
-    }, [mostVisibleContainer]);
-
-    useEffect(() => {
         const elements = [
             document.getElementById("steps-container-item-1"),
             document.getElementById("steps-container-item-2"),
@@ -30,33 +26,25 @@ const Steps = () => {
                 visibilityMap[target.id] = intersectionRatio;
             });
 
-            // Find the element with the highest visibility percentage
             const mostVisibleElement = Object.keys(visibilityMap).reduce((a, b) =>
                 visibilityMap[a] > visibilityMap[b] ? a : b
             );
 
-            // Check if the most visible element has a visibility of 0
             if (visibilityMap[mostVisibleElement] === 0) {
-                setMostVisibleContainer(null); // Set to null if no element is visible
-            } else {
-                setMostVisibleContainer(mostVisibleElement); // Set the most visible element
-            }
+                setMostVisibleContainer(null);
+            } else setMostVisibleContainer(mostVisibleElement);
         };
 
         observerRef.current = new IntersectionObserver(observerCallback, {
-            threshold: Array.from({length: 101}, (_, i) => i / 100), // Thresholds from 0 to 1 (0%, 1%, ..., 100%)
+            threshold: Array.from({length: 101}, (_, i) => i / 100),
         });
 
         elements.forEach((element) => {
-            if (element) {
-                observerRef.current.observe(element);
-            }
+            if (element) observerRef.current.observe(element);
         });
 
         return () => {
-            if (observerRef.current) {
-                observerRef.current.disconnect();
-            }
+            if (observerRef.current) observerRef.current.disconnect();
         };
     }, []);
     return (

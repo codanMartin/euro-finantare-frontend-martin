@@ -55,7 +55,7 @@ const StepNavItem = ({id, bulletNumber, bulletText, mostVisibleContainer, isLast
 
     return (
         <button id={id} onClick={() => handleClick()}
-                className={cn(isSelected ? "bg-eu-blue text-white" : "", isLast ? "md:border-x" : "border-b md:border-b-0 md:border-l", "flex focus:outline-none px-8 py-4 space-x-4 md:justify-center items-end border-gray-300 transition-colors duration-300")}>
+                className={cn(isSelected ? "md:bg-eu-blue md:text-white" : "", isLast ? "md:border-x" : "border-b md:border-b-0 md:border-l", "flex focus:outline-none px-8 py-4 space-x-4 md:justify-center items-end border-gray-300 transition-colors duration-300")}>
             <span className="text-2xl font-bold">{bulletNumber}</span>
             <span className="text-sm pb-1">{bulletText}</span>
             <div className="md:hidden flex flex-1 h-full items-center justify-end">
