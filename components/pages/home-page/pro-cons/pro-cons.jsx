@@ -11,7 +11,7 @@ const ProCons = () => {
             <div className="flex text-center text-2xl font-bold pb-16">
                 Lorem ipsum dolor sit amet?
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 w-full max-w-screen-lg gap-8 md:gap-16">
+            <div className="grid grid-cols-1 sm:grid-cols-2 w-full max-w-screen-lg gap-8 md:gap-16 perspective-800">
                 <div
                     className="col-span-1 h-min bg-gray-50 border border-gray-300 rounded-2xl p-4 shadow-3xl scale-105 translate-z-10">
                     <div className="flex flex-col w-full">

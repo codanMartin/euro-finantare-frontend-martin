@@ -17,7 +17,7 @@ const Financing = async () => {
             <BreadcrumbPageList/>
             <div className="flex flex-1">
                 {!error && data && Array.isArray(data) && data.length > 0 && (
-                    <div className="p-8 lg:p-16 gap-8 lg:gap-16 grid grid-cols-1 md:grid-cols-2 max-w-screen-2xl w-full">
+                    <div className="p-8 lg:p-16 gap-8 lg:gap-16 grid grid-cols-1 md:grid-cols-2 max-w-screen-2xl w-full perspective-800">
                         {data.map(availableFinancing => (
                             <div className="flex flex-col w-full border border-gray-200 hover:border-white hover:shadow-3xl duration-300 transform-gpu hover:scale-105 hover:translate-z-10">
                                 <div className="flex items-center w-full p-4 min-h-[72px] max-h-[72px] bg-eu-blue/5">

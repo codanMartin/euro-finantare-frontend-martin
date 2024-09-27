@@ -1,7 +1,7 @@
-import BreadcrumbPageList from "@/components/layout/breadcrumb-page-list";
-import {getFinancingBySlug} from "@/services/financing-service";
 import {DATE_FORMATS, LONG_PROJECT_STATUS_DISPLAY, PROJECT_STATUS} from "@/utils/enums";
+import BreadcrumbPageList from "@/components/layout/breadcrumb-page-list";
 import {cn, formatUnixDate, getUnixTimestamp} from "@/utils/utils";
+import {getFinancingBySlug} from "@/services/financing-service";
 import {FaCircle} from "react-icons/fa6";
 
 const FinancingSlug = async ({params}) => {
