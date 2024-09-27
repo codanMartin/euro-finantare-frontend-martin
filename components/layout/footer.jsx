@@ -11,8 +11,12 @@ const Footer = () => {
                 <div
                     className="flex flex-col space-y-4 md:space-y-0 md:flex-row flex-1 w-full md:justify-between md:space-x-4">
                     <div className="flex flex-col space-y-4 max-w-md">
-                        <Link href="/" className="relative flex justify-start">
-                            <LogoWithTitle inverted={true} className="flex w-[400px] h-auto"/>
+                        <Link href="/" className="relative flex items-center space-x-2 text-2xl text-eu-blue font-bold justify-start">
+                            <LogoWithTitle inverted={true} className="flex w-[60px] h-[50px]"/>
+                            <div className={"flex flex-col -space-y-2.5 pt-[11px]"}>
+                                <span>EURO</span>
+                                <span>FINANTARE</span>
+                            </div>
                         </Link>
                         <span>Pentru mai multe informații, nu ezitați să ne contactați la numărul afișat sau pe e-mail.</span>
                     </div>

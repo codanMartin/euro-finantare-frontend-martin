@@ -13,7 +13,7 @@ const ProCons = () => {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 w-full max-w-screen-lg gap-8 md:gap-16">
                 <div
-                    className="col-span-1 h-min bg-gray-50 border border-gray-300 rounded-2xl shadow-sm p-4">
+                    className="col-span-1 h-min bg-gray-50 border border-gray-300 rounded-2xl p-4 shadow-3xl scale-105 translate-z-10">
                     <div className="flex flex-col w-full">
                         <div className="flex flex-col items-center">
                             <div className="relative flex justify-center">
@@ -35,7 +35,7 @@ const ProCons = () => {
                     </div>
                 </div>
 
-                <div className="col-span-1 h-min bg-gray-300 border border-gray-300 rounded-2xl shadow-sm p-4">
+                <div className="col-span-1 h-min bg-gray-300 border border-gray-300 rounded-2xl shadow-sm p-4 -translate-z-10">
                     <div className="flex flex-col w-full">
                         <div className="flex flex-col items-center">
                             <div className="relative flex justify-center">

@@ -51,7 +51,7 @@ const Steps = () => {
         <div className="relative flex flex-col flex-1 w-full border-b border-gray-300 shadow">
             <StepsDescription/>
             <StepsNav mostVisibleContainer={mostVisibleContainer}/>
-            <div className={"flex flex-1 flex-col py-8 pb-8"}>
+            <div className={"flex flex-1 flex-col py-8"}>
                 <StepContainer stepId={"steps-container-item-1"} stepTitle={"1. Lorem ipsum dolor"}
                                imageSrc={placeholder}
                                stepParagraphs={["Proin aliquam laoreet urna, nec ornare risus pretium at. Phasellus aliquam, nunc posuere accumsan cursus, dui ante pretium neque", "Morbi magna dui, volutpat sit amet euismod eu, blandit a arcu. Sed molestie ornare mi sit amet vulputate. Nam fringilla magna elit, sit amet eleifend metus aliquam at. Vivamus placerat ipsum vel elit commodo, id congue ipsum semper. Nullam semper ut augue id fermentum. Maecenas dapibus ullamcorper elit, vel placerat orci facilisis tincidunt. Donec eget libero vel ipsum varius mattis.", "Curabitur euismod sollicitudin imperdiet. Nulla facilisi. Vestibulum laoreet ac arcu at vehicula. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."]}/>

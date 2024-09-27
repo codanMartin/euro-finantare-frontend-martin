@@ -10,7 +10,10 @@ module.exports = {
             colors: {
                 'eu-blue': "#1b34be"
             },
+            boxShadow: {
+                '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
+            }
         },
     },
-    plugins: [require('tailwindcss-animated'), require("tailwind-extended-shadows")],
+    plugins: [require('tailwindcss-animated'), require("tailwind-extended-shadows"), require('@xpd/tailwind-3dtransforms')],
 };
