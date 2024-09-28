@@ -21,7 +21,7 @@ export async function generateMetadata({params: {slug}}) {
         title: `Euro Finantare - ${data["name"]}`,
         description: data["description"],
         openGraph: {
-            images: `${domain}/placeholder.jpg`,
+            images: [`${domain}/placeholder.jpg`],
             url: `${domain}/finantari/${slug}`,
         },
     };
