@@ -6,8 +6,9 @@ const Footer = () => {
 
     return (
         <footer
-            className="border-t border-gray-300 w-full min-h-[400px] bg-[#212121] px-8 md:px-16 py-16 text-[#f9f9f9]">
-            <div className="flex flex-col space-y-16">
+            className="flex border-t border-gray-300 justify-center w-full min-h-[400px] bg-[#212121] px-8 md:px-16 py-16 text-[#f9f9f9]">
+            <div className="flex w-full max-w-screen-2xl">
+            <div className="flex flex-col w-full space-y-16">
                 <div
                     className="flex flex-col space-y-4 md:space-y-0 md:flex-row flex-1 w-full md:justify-between md:space-x-4">
                     <div className="flex flex-col space-y-4 max-w-md">
@@ -47,6 +48,7 @@ const Footer = () => {
                         </Link>
                     </div>
                 </div>
+            </div>
             </div>
         </footer>
     )

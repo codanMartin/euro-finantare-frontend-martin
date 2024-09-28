@@ -1,9 +1,10 @@
 "use client"
+
+import {FaCaretRight} from "react-icons/fa6";
 import {usePathname} from 'next/navigation'
 import Link from "next/link";
-import {FaCaretRight} from "react-icons/fa6";
 
-const truncateLabel = (label, maxLength = 35) => {
+const truncateLabel = (label, maxLength = 40) => {
     if (label.length <= maxLength) return label;
     return `${label.slice(0, maxLength - 3)}...`;
 }
@@ -22,7 +23,7 @@ export default function BreadcrumbPageList() {
 
 
     return (
-        <div className="px-8 lg:px-16 py-4 flex items-center border-b border-gray-200 shadow">
+        <div className="px-8 lg:px-16 py-4 flex w-full items-center border-b border-x border-gray-200 shadow-b-sm">
             <nav aria-label="Breadcrumb">
                 <ul role="list" className="flex items-center flex-wrap">
                     {breadcrumbs.map((item, index) => (

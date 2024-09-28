@@ -16,7 +16,7 @@ export const metadata = {
 
 export default function RootLayout({children}) {
     return (
-        <html lang="en">
+        <html lang="ro">
         <body className="antialiased">
         <div
             className={cn(montserrat.className, "relative flex flex-col h-full min-h-screen w-full min-w-screen items-center text-[#212121]")}>

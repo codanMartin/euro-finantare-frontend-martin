@@ -1,37 +1,61 @@
-import {DATE_FORMATS, LONG_PROJECT_STATUS_DISPLAY, PROJECT_STATUS} from "@/utils/enums";
+import MarkdownExpensesContainer from "@/components/pages/financing-slug-page/markdown-expenses-container";
+import MarkdownDataContainer from "@/components/pages/financing-slug-page/markdown-data-container";
+import FinancingAvailability from "@/components/pages/financing-slug-page/financing-availability";
+import SideDataWithSource from "@/components/pages/financing-slug-page/side-data-with-source";
 import BreadcrumbPageList from "@/components/layout/breadcrumb-page-list";
-import {cn, formatUnixDate, getUnixTimestamp} from "@/utils/utils";
 import {getFinancingBySlug} from "@/services/financing-service";
-import {FaCircle} from "react-icons/fa6";
+import {getUnixTimestamp} from "@/utils/utils";
+import FinancingMap from "@/components/pages/financing-slug-page/financing-map";
 
-const FinancingSlug = async ({params}) => {
-    const desiredFinancing = await getFinancingBySlug(params.slug)
+export const dynamic = 'force-dynamic';
+
+const FinancingSlug = async ({params: {slug}}) => {
+    const desiredFinancing = await getFinancingBySlug(slug)
     const dateNowInUnix = getUnixTimestamp(new Date());
     const {data, error} = desiredFinancing.response
-    console.log(desiredFinancing)
 
     return (
-        <div className="flex flex-col w-full flex-1 justify-center h-full">
-            <BreadcrumbPageList/>
-            <div className="flex flex-1 w-full">
-                {!error && data && (
-                    <div className="flex flex-col w-full">
-                        <div className="px-8 lg:px-16 py-4 flex items-center border-b border-gray-200 shadow">
-                            <ul className="flex flex-col font-semibold space-y-1">
-                                <li className={cn("font-bold flex flex-nowrap items-center", data.status === PROJECT_STATUS.OPENED && "text-green-600", data.status === PROJECT_STATUS.CLOSED && "text-red-600", data.status === PROJECT_STATUS.PENDING && "text-orange-400")}>
-                                    <FaCircle className={"mr-2 animate-pulse"}/>
-                                    <span>{LONG_PROJECT_STATUS_DISPLAY[data.status]}</span>
-                                </li>
-                                <li className={cn("ml-[24px]", data.end_date ? data.end_date < dateNowInUnix ? "text-red-600" : "text-green-600" : "text-green-600")}>
-                                    Data deschidere apel: {data.start_date ? formatUnixDate(data.start_date, DATE_FORMATS.LONG) : "-"}
-                                </li>
-                                <li className="ml-[24px] text-red-600">
-                                    Dată limită depunere: {data.end_date ? formatUnixDate(data.end_date, DATE_FORMATS.LONG) : "-"}
-                                </li>
-                            </ul>
+        <div className="flex flex-1 w-full justify-center max-w-[1750px]">
+            <div className="flex flex-col w-full flex-1 items-center h-full">
+                <BreadcrumbPageList/>
+                <div className="flex justify-center flex-1 w-full">
+                    {!error && data && (
+                        <div className="flex flex-col w-full">
+                            <FinancingAvailability data={data} dateNowInUnix={dateNowInUnix}/>
+                            <div className="flex flex-col-reverse xl:flex-row w-full">
+                                <div className="flex flex-col shadow-r-sm border-x border-gray-200">
+                                    <MarkdownDataContainer content={data["description"]}
+                                                           title="Descrierea finanțării"/>
+                                    <MarkdownDataContainer content={data["eligibleActivities"]}
+                                                           title="Activități eligibile"/>
+                                    <div
+                                        className="flex justify-center md:px-8 lg:px-16 w-full border-b border-gray-200 shadow-b-sm">
+                                        <div className="flex flex-col md:flex-row w-full md:space-x-4 lg:space-x-8">
+                                            <MarkdownExpensesContainer content={data["eligibleExpenses"]}
+                                                                       title="Cheltuieli eligibile"/>
+                                            <MarkdownExpensesContainer content={data["eligibleMinimisExpenses"]}
+                                                                       title="Cheltuieli eligibile (Minimis)"/>
+                                            <MarkdownExpensesContainer content={data["eligibleStateExpenses"]}
+                                                                       title="Cheltuieli eligibile (Ajutor de Stat)"/>
+                                            <MarkdownExpensesContainer content={data["nonEligibleExpenses"]}
+                                                                       title="Cheltuieli neeligibile"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    className="min-w-[350px] flex-col flex items-center w-full border-b border-r border-gray-200 shadow-b-sm">
+                                    <FinancingMap regions={data["supported_regions"]} title="Regiuni eligibile"/>
+                                    <SideDataWithSource content={data["program"]["about"]["title"]}
+                                                        source={data["program"]["about"]["link"]}
+                                                        title="Despre finanțare"/>
+                                    <SideDataWithSource content={data["program"]["where_to_apply"]["description"]}
+                                                        source={data["program"]["where_to_apply"]["link"]}
+                                                        title="Unde depun proiectul?"/>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                )}
+                    )}
+                </div>
             </div>
         </div>
     )
