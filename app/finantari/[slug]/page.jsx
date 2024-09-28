@@ -24,6 +24,7 @@ export async function generateMetadata({params: {slug}}) {
             images: [
                 {
                     url: `${domain}/placeholder.jpg`,
+                    secure_url: `${domain}/placeholder.jpg`,
                     alt: data["name"]
                 }
             ],
