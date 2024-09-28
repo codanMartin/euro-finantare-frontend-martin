@@ -24,6 +24,40 @@ export const financingListing = [
         "total_budget": 40000000,
         "min_budget": 0,
         "max_budget": 40000,
+        "contribution": {
+            "NV": {
+                "from": 10,
+                "to": null,
+            },
+            "C": {
+                "from": 10,
+                "to": null,
+            },
+            "NE": {
+                "from": 10,
+                "to": null,
+            },
+            "SE": {
+                "from": 10,
+                "to": null,
+            },
+            "SM": {
+                "from": 10,
+                "to": null,
+            },
+            "BI": {
+                "from": 10,
+                "to": null,
+            },
+            "SV": {
+                "from": 10,
+                "to": null,
+            },
+            "V": {
+                "from": 10,
+                "to": null,
+            },
+        },
         "program": {
             "slug": "finantari-nationale",
             "name": "Finanțări Naționale",
@@ -68,6 +102,12 @@ export const financingListing = [
         "total_budget": 86725188,
         "min_budget": 200000,
         "max_budget": 1500000,
+        "contribution": {
+            "SE": {
+                "from": 25,
+                "to": 40,
+            },
+        },
         "program": {
             "slug": "programului-operational-regional",
             "name": "POR - Programul Operațional Regional",
@@ -113,6 +153,12 @@ export const financingListing = [
         "total_budget": 37627724,
         "min_budget": 25000,
         "max_budget": 200000,
+        "contribution": {
+            "BI": {
+                "from": 10,
+                "to": 10,
+            },
+        },
         "program": {
             "slug": "programului-operational-regional",
             "name": "POR - Programul Operațional Regional",
@@ -165,6 +211,40 @@ export const financingListing = [
         "total_budget": 220000000,
         "min_budget": 500000,
         "max_budget": 8400000,
+        "contribution": {
+            "NV": {
+                "from": 30,
+                "to": 60,
+            },
+            "C": {
+                "from": 30,
+                "to": 60,
+            },
+            "NE": {
+                "from": 25,
+                "to": 50,
+            },
+            "SE": {
+                "from": 25,
+                "to": 50,
+            },
+            "SM": {
+                "from": 25,
+                "to": 50,
+            },
+            "BI": {
+                "from": 35,
+                "to": 65,
+            },
+            "SV": {
+                "from": 25,
+                "to": 40,
+            },
+            "V": {
+                "from": 30,
+                "to": 70,
+            },
+        },
         "program": {
             "slug": "planul-national-de-redresare-si-rezilienta",
             "name": "PNRR - Planul Național de Redresare și Reziliență",

@@ -2,10 +2,11 @@ import MarkdownExpensesContainer from "@/components/pages/financing-slug-page/ma
 import MarkdownDataContainer from "@/components/pages/financing-slug-page/markdown-data-container";
 import FinancingAvailability from "@/components/pages/financing-slug-page/financing-availability";
 import SideDataWithSource from "@/components/pages/financing-slug-page/side-data-with-source";
+import IntroSection from "@/components/pages/financing-slug-page/intro-section";
+import FinancingMap from "@/components/pages/financing-slug-page/financing-map";
 import BreadcrumbPageList from "@/components/layout/breadcrumb-page-list";
 import {getFinancingBySlug} from "@/services/financing-service";
 import {getUnixTimestamp} from "@/utils/utils";
-import FinancingMap from "@/components/pages/financing-slug-page/financing-map";
 
 export const dynamic = 'force-dynamic';
 
@@ -21,9 +22,12 @@ const FinancingSlug = async ({params: {slug}}) => {
                 <div className="flex justify-center flex-1 w-full">
                     {!error && data && (
                         <div className="flex flex-col w-full">
-                            <FinancingAvailability data={data} dateNowInUnix={dateNowInUnix}/>
+                           <IntroSection data={data}/>
                             <div className="flex flex-col-reverse xl:flex-row w-full">
                                 <div className="flex flex-col shadow-r-sm border-x border-gray-200">
+
+                                    <FinancingAvailability data={data} dateNowInUnix={dateNowInUnix}/>
+
                                     <MarkdownDataContainer content={data["description"]}
                                                            title="Descrierea finanțării"/>
                                     <MarkdownDataContainer content={data["eligibleActivities"]}

@@ -2,10 +2,13 @@ import {DATE_FORMATS, LONG_PROJECT_STATUS_DISPLAY, PROJECT_STATUS} from "@/utils
 import {cn, formatUnixDate} from "@/utils/utils";
 import {FaCircle} from "react-icons/fa6";
 
+export const dynamic = 'force-dynamic';
+
+
 const FinancingAvailability = ({data, dateNowInUnix}) => {
 
     return (
-        <div className="px-8 lg:px-16 py-4 flex items-center border-b border-x border-gray-200 shadow-b-sm">
+        <div className="px-8 lg:px-16 py-4 flex items-center border-b border-gray-200 shadow-b-sm xl:shadow-r-sm">
             <ul className="flex flex-col font-semibold space-y-1">
                 <li className={cn("font-bold flex flex-nowrap items-center", data.status === PROJECT_STATUS.OPENED && "text-green-600", data.status === PROJECT_STATUS.CLOSED && "text-red-600", data.status === PROJECT_STATUS.PENDING && "text-orange-400")}>
                     <FaCircle className={"mr-2 mb-[3px] animate-pulse"}/>

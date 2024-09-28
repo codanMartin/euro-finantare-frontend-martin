@@ -53,7 +53,7 @@ const Financing = async () => {
                                         <span className="text-black font-semibold text-nowrap">
                                             Buget total:&nbsp;
                                         </span>
-                                                    <span className="text-gray-400 text-nowrap">
+                                        <span className="text-gray-400 text-nowrap">
                                             {availableFinancing["total_budget"]} {availableFinancing["budget_currency"]}
                                         </span>
                                                 </div>
