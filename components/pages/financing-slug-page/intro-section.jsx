@@ -45,7 +45,7 @@ const IntroSection = ({data, shareUrl}) => {
                 className="w-full flex-1 flex flex-col p-8 lg:p-16 space-y-4 lg:space-y-8 border-b sm:border-r sm:border-b-0 border-gray-200 shadow-b-sm sm:shadow-r-sm sm:shadow-b-0">
                 <span className="text-2xl font-bold">{data["name"]}</span>
                 <div className="flex flex-col">
-                    <span>{data["program"]["name"]}</span>
+                    <h1>{data["program"]["name"]}</h1>
                     <span>Tip Finantare: {data["program"]["type"]["title"]}</span>
                 </div>
                 <div className="flex space-x-3 items-center">
