@@ -9,7 +9,7 @@ const FinancingMap = ({title, regions}) => {
 
     return (
         <div
-            className="flex p-8 lg:p-16 xl:p-8 flex-col space-y-4 lg:space-y-8 w-full border-b shadow-b-sm border-gray-200">
+            className="flex p-8 lg:p-16 xl:pl-8 pr-16 flex-col space-y-4 lg:space-y-8 w-full border-b shadow-b-sm border-gray-200">
             <span className="text-2xl font-bold">{title}</span>
             <div className="relative flex pointer-events-none select-none">
                 <Image src={BLANK_MAP} alt="Harta Goala" className="w-auto h-auto pointer-events-none select-none"/>

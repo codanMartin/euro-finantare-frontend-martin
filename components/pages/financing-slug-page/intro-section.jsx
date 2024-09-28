@@ -1,5 +1,6 @@
 import {FaLandmark, FaSackDollar} from "react-icons/fa6";
 import {MAP_LOCATIONS_NAME} from "@/utils/enums";
+import { RWebShare } from "react-web-share";
 
 export const dynamic = 'force-dynamic';
 
@@ -37,16 +38,20 @@ function formatContribution(contributions) {
     }).join(', ');
 }
 
-const IntroSection = ({data}) => {
+const IntroSection = ({data, shareUrl}) => {
 
     return (
         <div className="flex flex-col sm:flex-row justify-center w-full border-x border-b border-gray-200 shadow-b-sm">
-            <div className="w-full flex-1 flex flex-col p-8 lg:p-16 space-y-4 lg:space-y-8 border-b sm:border-r sm:border-b-0 border-gray-200 shadow-b-sm sm:shadow-r-sm sm:shadow-b-0">
+            <div
+                className="w-full flex-1 flex flex-col p-8 lg:p-16 space-y-4 lg:space-y-8 border-b sm:border-r sm:border-b-0 border-gray-200 shadow-b-sm sm:shadow-r-sm sm:shadow-b-0">
                 <span className="text-2xl font-bold">{data["name"]}</span>
                 <div className="flex flex-col">
                     <span>{data["program"]["name"]}</span>
                     <span>Tip Finantare: {data["program"]["type"]["title"]}</span>
                 </div>
+                <a href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`} title="Facebook" target="_blank"
+                   rel="noreferrer">Facebook</a>
+
             </div>
             <div className="w-full flex flex-col p-8 lg:p-16 flex-1 space-y-4">
                 <div>

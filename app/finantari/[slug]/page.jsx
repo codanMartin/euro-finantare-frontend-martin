@@ -6,14 +6,33 @@ import IntroSection from "@/components/pages/financing-slug-page/intro-section";
 import FinancingMap from "@/components/pages/financing-slug-page/financing-map";
 import BreadcrumbPageList from "@/components/layout/breadcrumb-page-list";
 import {getFinancingBySlug} from "@/services/financing-service";
+import useDomainReceiver from "@/hooks/use-domain-receiver";
 import {getUnixTimestamp} from "@/utils/utils";
 
 export const dynamic = 'force-dynamic';
+
+export async function generateMetadata({params: {slug}}) {
+    const desiredFinancing = await getFinancingBySlug(slug)
+    const {data, error} = desiredFinancing.response
+    const {domain} = useDomainReceiver()
+
+
+    return {
+        title: `Euro Finantare - ${data["name"]}`,
+        description: data["description"],
+        openGraph: {
+            images: `${domain}/placeholder.jpg`,
+            url: `${domain}/finantari/${slug}`,
+        },
+    };
+}
 
 const FinancingSlug = async ({params: {slug}}) => {
     const desiredFinancing = await getFinancingBySlug(slug)
     const dateNowInUnix = getUnixTimestamp(new Date());
     const {data, error} = desiredFinancing.response
+    const {domain} = useDomainReceiver()
+    const shareUrl = `${domain}/finantari/${slug}`
 
     return (
         <div className="flex flex-1 w-full justify-center max-w-[1750px]">
@@ -22,12 +41,10 @@ const FinancingSlug = async ({params: {slug}}) => {
                 <div className="flex justify-center flex-1 w-full">
                     {!error && data && (
                         <div className="flex flex-col w-full">
-                           <IntroSection data={data}/>
+                            <IntroSection data={data} shareUrl={shareUrl}/>
                             <div className="flex flex-col-reverse xl:flex-row w-full">
                                 <div className="flex flex-col shadow-r-sm border-x border-gray-200">
-
                                     <FinancingAvailability data={data} dateNowInUnix={dateNowInUnix}/>
-
                                     <MarkdownDataContainer content={data["description"]}
                                                            title="Descrierea finanțării"/>
                                     <MarkdownDataContainer content={data["eligibleActivities"]}
