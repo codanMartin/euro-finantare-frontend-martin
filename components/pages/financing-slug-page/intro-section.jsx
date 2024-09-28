@@ -1,6 +1,5 @@
-import {FaLandmark, FaSackDollar} from "react-icons/fa6";
+import {FaFacebook, FaLandmark, FaLinkedin, FaSackDollar, FaXTwitter} from "react-icons/fa6";
 import {MAP_LOCATIONS_NAME} from "@/utils/enums";
-import { RWebShare } from "react-web-share";
 
 export const dynamic = 'force-dynamic';
 
@@ -11,7 +10,7 @@ function formatContribution(contributions) {
     const allSameTo = locations.every(loc => contributions[loc].to === firstContribution.to);
 
     if (locations.length === 1) {
-        const { from, to } = firstContribution;
+        const {from, to} = firstContribution;
         if (to === from) {
             return `${to} %`;
         }
@@ -19,7 +18,7 @@ function formatContribution(contributions) {
     }
 
     if (allSameFrom && allSameTo) {
-        const { from, to } = firstContribution;
+        const {from, to} = firstContribution;
         if (to === from) {
             return `${to} %`;
         }
@@ -27,7 +26,7 @@ function formatContribution(contributions) {
     }
 
     return locations.map((loc, index) => {
-        const { from, to } = contributions[loc];
+        const {from, to} = contributions[loc];
         let contributionString;
         if (to === from) {
             contributionString = `${to} %`;
@@ -49,9 +48,21 @@ const IntroSection = ({data, shareUrl}) => {
                     <span>{data["program"]["name"]}</span>
                     <span>Tip Finantare: {data["program"]["type"]["title"]}</span>
                 </div>
-                <a href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`} title="Facebook" target="_blank"
-                   rel="noreferrer">Facebook</a>
-
+                <div className="flex space-x-3 items-center">
+                    <span>Distribuie:</span>
+                    <a href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`} title="Facebook"
+                       target="_blank" rel="noreferrer" className="group">
+                        <FaFacebook className={"text-2xl group-hover:text-eu-blue duration-300"}/>
+                    </a>
+                    <a href={`https://twitter.com/share?url=${shareUrl}&text=Euro Finantare: ${data["name"]}`} title="Facebook"
+                       target="_blank" rel="noreferrer" className="group">
+                        <FaXTwitter className={"text-2xl group-hover:text-eu-blue duration-300"}/>
+                    </a>
+                    <a href={`https://www.linkedin.com/shareArticle?mini=true&url=${shareUrl}`} title="Facebook"
+                       target="_blank" rel="noreferrer" className="group">
+                        <FaLinkedin className={"text-2xl group-hover:text-eu-blue duration-300"}/>
+                    </a>
+                </div>
             </div>
             <div className="w-full flex flex-col p-8 lg:p-16 flex-1 space-y-4">
                 <div>
@@ -59,7 +70,8 @@ const IntroSection = ({data, shareUrl}) => {
                     <span>{data["total_budget"]} {data["budget_currency"]}</span>
                 </div>
                 <div className={"flex space-x-4"}>
-                    <div className="min-w-[45px] min-h-[45px] max-w-[45px] max-h-[45px] flex items-center justify-center rounded-full border-[4px] border-sky-600 bg-sky-100">
+                    <div
+                        className="min-w-[45px] min-h-[45px] max-w-[45px] max-h-[45px] flex items-center justify-center rounded-full border-[4px] border-sky-600 bg-sky-100">
                         <FaLandmark className="text-lg text-sky-600"/>
                     </div>
                     <div className="flex flex-col">
@@ -68,7 +80,8 @@ const IntroSection = ({data, shareUrl}) => {
                     </div>
                 </div>
                 <div className={"flex space-x-4"}>
-                    <div className="min-w-[45px] min-h-[45px] max-w-[45px] max-h-[45px] flex items-center justify-center rounded-full border-[4px] border-violet-600 bg-violet-100">
+                    <div
+                        className="min-w-[45px] min-h-[45px] max-w-[45px] max-h-[45px] flex items-center justify-center rounded-full border-[4px] border-violet-600 bg-violet-100">
                         <FaSackDollar className="text-lg text-violet-600"/>
                     </div>
                     <div className="flex flex-col">
