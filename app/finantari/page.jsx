@@ -1,11 +1,10 @@
+import FinancingCardInListing from "@/components/pages/financing-page/financing-card-in-listing";
 import BreadcrumbPageList from "@/components/layout/breadcrumb-page-list";
 import { getFinancingListings } from "@/services/financing-service";
-import CardV1 from "@/components/pages/financing-page/card-v1";
-import CardV2 from "@/components/pages/financing-page/card-v2";
 
 export const dynamic = "force-dynamic";
 
-const Financing = async () => {
+const FinancingListing = async () => {
     const financingData = await getFinancingListings();
     const { data, error } = financingData.response;
 
@@ -17,13 +16,7 @@ const Financing = async () => {
                     {!error && data && Array.isArray(data) && data.length > 0 && (
                         <div className="grid w-full grid-cols-1 items-center gap-8 border-x p-8 md:grid-cols-2 lg:gap-16 lg:p-16">
                             {data.map((availableFinancing, availableFinancingIdx) => (
-                                <CardV2
-                                    availableFinancing={availableFinancing}
-                                    key={availableFinancingIdx}
-                                />
-                            ))}
-                            {data.map((availableFinancing, availableFinancingIdx) => (
-                                <CardV1
+                                <FinancingCardInListing
                                     availableFinancing={availableFinancing}
                                     key={availableFinancingIdx}
                                 />
@@ -36,4 +29,4 @@ const Financing = async () => {
     );
 };
 
-export default Financing;
+export default FinancingListing;

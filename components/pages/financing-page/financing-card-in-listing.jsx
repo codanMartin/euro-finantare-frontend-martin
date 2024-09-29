@@ -11,7 +11,7 @@ import { cn, formatUnixDate, getUnixTimestamp } from "@/utils/utils";
 import Image from "next/image";
 import Link from "next/link";
 
-const CardV2 = ({ availableFinancing }) => {
+const FinancingCardInListing = ({ availableFinancing }) => {
     const dateNowInUnix = getUnixTimestamp(new Date());
 
     return (
@@ -142,7 +142,7 @@ const CardV2 = ({ availableFinancing }) => {
     );
 };
 
-export default CardV2;
+export default FinancingCardInListing;
 
 const IconWithSvg = ({ children, title, content, svgWrapperClassName, contentClassName }) => {
     return (
