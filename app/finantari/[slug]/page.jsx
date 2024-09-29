@@ -6,15 +6,15 @@ import IntroSection from "@/components/pages/financing-slug-page/intro-section";
 import FinancingMap from "@/components/pages/financing-slug-page/financing-map";
 import BreadcrumbPageList from "@/components/layout/breadcrumb-page-list";
 import { getFinancingBySlug } from "@/services/financing-service";
-import useDomainReceiver from "@/hooks/use-domain-receiver";
+import { useDomainReceiver } from "@/hooks/use-domain-receiver";
 import { getUnixTimestamp } from "@/utils/utils";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params: { slug } }) {
     const desiredFinancing = await getFinancingBySlug(slug);
+    const { domain, fullUrl } = useDomainReceiver();
     const { data, error } = desiredFinancing.response;
-    const { domain } = useDomainReceiver();
 
     return {
         title: `Euro Finantare - ${data["name"]}`,
@@ -27,7 +27,7 @@ export async function generateMetadata({ params: { slug } }) {
                     alt: data["name"],
                 },
             ],
-            url: `${domain}/finantari/${slug}`,
+            url: fullUrl,
         },
     };
 }
@@ -36,8 +36,6 @@ const FinancingSlug = async ({ params: { slug } }) => {
     const desiredFinancing = await getFinancingBySlug(slug);
     const dateNowInUnix = getUnixTimestamp(new Date());
     const { data, error } = desiredFinancing.response;
-    const { domain } = useDomainReceiver();
-    const shareUrl = `${domain}/finantari/${slug}`;
 
     return (
         <div className="flex w-full max-w-[1750px] flex-1 justify-center">
@@ -46,7 +44,7 @@ const FinancingSlug = async ({ params: { slug } }) => {
                 <div className="flex w-full flex-1 justify-center">
                     {!error && data && (
                         <div className="flex w-full flex-col">
-                            <IntroSection data={data} shareUrl={shareUrl} />
+                            <IntroSection data={data} />
                             <div className="flex w-full flex-col-reverse xl:flex-row">
                                 <div className="flex flex-col border-x border-gray-200 shadow-r-sm">
                                     <FinancingAvailability

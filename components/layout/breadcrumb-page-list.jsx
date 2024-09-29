@@ -1,18 +1,10 @@
-"use client";
-
-import useMobileViewPort from "@/hooks/use-mobile-viewport";
+import { useDomainReceiver } from "@/hooks/use-domain-receiver";
 import { FaCaretRight } from "react-icons/fa6";
 import { truncateString } from "@/utils/utils";
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-export async function generateMetadata({ params }) {
-    console.log("params", params);
-}
-
 export default function BreadcrumbPageList() {
-    const { isMobileViewPort } = useMobileViewPort();
-    const pathname = usePathname();
+    const { pathname } = useDomainReceiver();
 
     const pathSegments = pathname.split("/").filter((segment) => segment !== "");
     const breadcrumbs = [
@@ -36,9 +28,7 @@ export default function BreadcrumbPageList() {
             <nav aria-label="Breadcrumb">
                 <ul role="list" className="flex flex-wrap items-center">
                     {breadcrumbs.map((item, index) => {
-                        const displayLabel = isMobileViewPort
-                            ? truncateString(item.label)
-                            : item.label;
+                        const displayLabel = truncateString(item.label);
                         return (
                             <li key={index} className="flex">
                                 {index < breadcrumbs.length - 1 && (

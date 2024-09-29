@@ -1,8 +1,10 @@
 import { headers } from "next/headers";
 
-export default function useDomainReceiver() {
-    const headerList = headers();
-    // const domain = headerList.get("x-forwarded-host") || headerList.get("host") || "beta.popstarz.ai";
-    let domain = "https://euro-finantare.netlify.app";
-    return { domain };
+export function useDomainReceiver() {
+    const headersList = headers();
+    const fullUrl = headersList.get("x-url") || "";
+    const pathname = headersList.get("x-pathname");
+    const domain = headersList.get("x-origin");
+
+    return { domain, fullUrl, pathname };
 }

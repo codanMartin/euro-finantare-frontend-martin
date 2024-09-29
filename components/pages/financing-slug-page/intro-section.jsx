@@ -1,7 +1,6 @@
 import { FaFacebook, FaLandmark, FaLinkedin, FaSackDollar, FaXTwitter } from "react-icons/fa6";
+import { useDomainReceiver } from "@/hooks/use-domain-receiver";
 import { MAP_LOCATIONS_NAME } from "@/utils/enums";
-
-export const dynamic = "force-dynamic";
 
 function formatContribution(contributions) {
     const locations = Object.keys(contributions);
@@ -41,7 +40,9 @@ function formatContribution(contributions) {
         .join(", ");
 }
 
-const IntroSection = ({ data, shareUrl }) => {
+const IntroSection = ({ data }) => {
+    const { fullUrl } = useDomainReceiver();
+
     return (
         <div className="flex w-full flex-col justify-center border-x border-b border-gray-200 shadow-b-sm sm:flex-row">
             <div className="sm:shadow-b-0 flex w-full flex-1 flex-col space-y-4 border-b border-gray-200 p-8 shadow-b-sm sm:border-b-0 sm:border-r sm:shadow-r-sm lg:space-y-8 lg:p-16">
@@ -53,7 +54,7 @@ const IntroSection = ({ data, shareUrl }) => {
                 <div className="flex items-center space-x-3">
                     <span>Distribuie:</span>
                     <a
-                        href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`}
+                        href={`https://www.facebook.com/sharer/sharer.php?u=${fullUrl}`}
                         title="Facebook"
                         target="_blank"
                         rel="noreferrer"
@@ -61,7 +62,7 @@ const IntroSection = ({ data, shareUrl }) => {
                         <FaFacebook className={"text-2xl duration-300 group-hover:text-eu-blue"} />
                     </a>
                     <a
-                        href={`https://twitter.com/share?url=${shareUrl}&text=Euro Finantare: ${data["name"]}`}
+                        href={`https://twitter.com/share?url=${fullUrl}&text=Euro Finantare: ${data["name"]}`}
                         title="Facebook"
                         target="_blank"
                         rel="noreferrer"
@@ -69,7 +70,7 @@ const IntroSection = ({ data, shareUrl }) => {
                         <FaXTwitter className={"text-2xl duration-300 group-hover:text-eu-blue"} />
                     </a>
                     <a
-                        href={`https://www.linkedin.com/shareArticle?mini=true&url=${shareUrl}`}
+                        href={`https://www.linkedin.com/shareArticle?mini=true&url=${fullUrl}`}
                         title="Facebook"
                         target="_blank"
                         rel="noreferrer"
