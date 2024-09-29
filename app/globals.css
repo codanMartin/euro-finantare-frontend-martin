@@ -4,14 +4,14 @@
 
 @layer components {
     ::-webkit-scrollbar {
-        @apply w-[5px] h-[5px] !important
+        @apply h-[5px] w-[5px] !important;
     }
 
     ::-webkit-scrollbar-track {
-        @apply rounded-md bg-[#1b34be]/10 !important
+        @apply rounded-md bg-[#1b34be]/10 !important;
     }
 
     ::-webkit-scrollbar-thumb {
-        @apply rounded-md hover:bg-[#1b34be]/90 bg-[#1b34be]/70 !important
+        @apply rounded-md bg-[#1b34be]/70 hover:bg-[#1b34be]/90 !important;
     }
 }

@@ -1,43 +1,46 @@
 {
-  "name": "founds-eligibility",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@hookform/resolvers": "^3.9.0",
-    "@radix-ui/react-label": "^2.1.0",
-    "@radix-ui/react-slot": "^1.1.0",
-    "@types/node": "^22.5.4",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.1",
-    "js-cookie": "^3.0.5",
-    "jsonwebtoken": "^9.0.2",
-    "jwt-decode": "^4.0.0",
-    "next": "^14.2.13",
-    "next-mdx-remote": "^5.0.0",
-    "prop-types": "^15.8.1",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-dropzone": "^14.2.3",
-    "react-hook-form": "^7.53.0",
-    "react-icons": "^5.3.0",
-    "react-web-share": "^2.0.2",
-    "sharp": "^0.33.5",
-    "tailwind-extended-shadows": "^0.4.0",
-    "tailwind-extended-shadows-merge": "^0.2.1",
-    "tailwind-merge": "^2.5.2",
-    "tailwindcss-animated": "^1.1.2",
-    "zod": "^3.23.8"
-  },
-  "devDependencies": {
-    "install": "^0.13.0",
-    "npm": "^10.8.3",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1"
-  }
+    "name": "founds-eligibility",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "format": "prettier --write ."
+    },
+    "dependencies": {
+        "@hookform/resolvers": "^3.9.0",
+        "@radix-ui/react-label": "^2.1.0",
+        "@radix-ui/react-slot": "^1.1.0",
+        "@types/node": "^22.5.4",
+        "class-variance-authority": "^0.7.0",
+        "clsx": "^2.1.1",
+        "js-cookie": "^3.0.5",
+        "jsonwebtoken": "^9.0.2",
+        "jwt-decode": "^4.0.0",
+        "next": "^14.2.13",
+        "next-mdx-remote": "^5.0.0",
+        "prop-types": "^15.8.1",
+        "react": "^18",
+        "react-dom": "^18",
+        "react-dropzone": "^14.2.3",
+        "react-hook-form": "^7.53.0",
+        "react-icons": "^5.3.0",
+        "react-web-share": "^2.0.2",
+        "sharp": "^0.33.5",
+        "tailwind-extended-shadows": "^0.4.0",
+        "tailwind-extended-shadows-merge": "^0.2.1",
+        "tailwind-merge": "^2.5.2",
+        "tailwindcss-animated": "^1.1.2",
+        "zod": "^3.23.8"
+    },
+    "devDependencies": {
+        "install": "^0.13.0",
+        "npm": "^10.8.3",
+        "postcss": "^8",
+        "prettier": "3.3.3",
+        "prettier-plugin-tailwindcss": "^0.6.8",
+        "tailwindcss": "^3.4.1"
+    }
 }

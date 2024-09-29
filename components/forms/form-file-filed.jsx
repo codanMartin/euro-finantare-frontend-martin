@@ -1,22 +1,26 @@
-import {FormControl, FormField, FormItem, FormLabel, FormMessage} from "@/components/schadcnui/form";
+import {
+    FormControl,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
+} from "@/components/schadcnui/form";
 import FileInput from "@/components/forms/file-input";
 
-
-export default function FormFileField({form, name, label}) {
-
+export default function FormFileField({ form, name, label }) {
     return (
         <FormField
             control={form.control}
             name={name}
-            render={({field}) => (
+            render={({ field }) => (
                 <FormItem>
                     <FormLabel className={"font-semibold"}>{label}</FormLabel>
                     <FormControl>
-                        <FileInput {...field}/>
+                        <FileInput {...field} />
                     </FormControl>
-                    <FormMessage/>
+                    <FormMessage />
                 </FormItem>
             )}
         />
-    )
+    );
 }
