@@ -43,7 +43,7 @@ const FinancingCardInListing = ({ availableFinancing }) => {
                         {availableFinancing["program"]["name"]}
                     </span>
                 </div>
-                <div className="grid w-full grid-cols-2 gap-2 py-2 md:grid-cols-1 lg:grid-cols-2">
+                <div className="grid w-full grid-cols-1 gap-2 py-2 md:grid-cols-2 lg:grid-cols-2">
                     <div className="grid w-full gap-2">
                         <IconWithSvg
                             content={`${availableFinancing["total_budget"]} ${availableFinancing["budget_currency"]}`}

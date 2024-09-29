@@ -16,7 +16,6 @@ const FinancingMap = ({ title, regions }) => {
                 />
                 {Object.keys(regions).length > 0 &&
                     Object.keys(regions).map((region, regionIdx) => {
-                        console.log(region);
                         return (
                             <div key={regionIdx} className="absolute h-full w-full">
                                 <Image
