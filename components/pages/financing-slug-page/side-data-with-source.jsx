@@ -7,8 +7,8 @@ const SideDataWithSource = ({ title, content, source }) => {
                 {source && (
                     <div>
                         <span className="mr-2">Sursa:</span>
-                        <a href={source.toString()} className="hover:text-eu-blue hover:underline">
-                            apasati aici
+                        <a href={source.toString()} className="text-eu-blue underline">
+                            apasa aici
                         </a>
                     </div>
                 )}

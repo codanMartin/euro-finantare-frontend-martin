@@ -1,6 +1,5 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { cn } from "@/utils/utils";
-import { FaCircle } from "react-icons/fa6";
 
 // Define a components map with Tailwind CSS classes using props
 const MarkdownPreview = async ({
@@ -28,7 +27,7 @@ const MarkdownPreview = async ({
         ol: (props) => <ol className={cn("text-wrap", OLClassName)} {...props} />,
         li: (props) => (
             <div className="mb-1 flex flex-shrink flex-row text-wrap last:mb-0">
-                <FaCircle className="mr-[6px] mt-[7px] max-h-[10px] min-h-[10px] min-w-[8px] max-w-[8px] text-xs font-normal text-eu-blue/30" />
+                <span className="mr-[6px] text-eu-blue/30">&#9679;</span>
                 <li className={cn("text-wrap", LIClassName)} {...props} />
             </div>
         ),
