@@ -147,8 +147,8 @@ export const financingListing = [
             "BI": "Bucuresti-Ilfov"
         },
         "national": false,
-        "start_date": "-",
-        "end_date": "-",
+        "start_date": "",
+        "end_date": "",
         "budget_currency": "€",
         "total_budget": 37627724,
         "min_budget": 25000,
