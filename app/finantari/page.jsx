@@ -1,10 +1,15 @@
 import FinancingCardInListing from "@/components/pages/financing-page/financing-card-in-listing";
 import BreadcrumbPageList from "@/components/layout/breadcrumb-page-list";
-import { getFinancingListings } from "@/services/financing-service";
+import { fetchFinancingListings } from "@/services/financing-service";
+import { cache } from "react";
 
 export const dynamic = "force-dynamic";
 
-const FinancingListing = async () => {
+const getFinancingListings = cache(async () => {
+    return await fetchFinancingListings();
+});
+
+export const FinancingListing = async () => {
     const financingData = await getFinancingListings();
     const { data, error } = financingData.response;
 
@@ -15,10 +20,10 @@ const FinancingListing = async () => {
                 <div className="flex w-full flex-1 flex-col">
                     {!error && data && Array.isArray(data) && data.length > 0 && (
                         <div className="grid w-full grid-cols-1 items-center gap-8 border-x p-8 md:grid-cols-2 lg:gap-16 lg:p-16">
-                            {data.map((availableFinancing, availableFinancingIdx) => (
+                            {data.map((financingData, financingIdx) => (
                                 <FinancingCardInListing
-                                    availableFinancing={availableFinancing}
-                                    key={availableFinancingIdx}
+                                    availableFinancing={financingData}
+                                    key={financingIdx}
                                 />
                             ))}
                         </div>

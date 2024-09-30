@@ -5,11 +5,16 @@ import SideDataWithSource from "@/components/pages/financing-slug-page/side-data
 import IntroSection from "@/components/pages/financing-slug-page/intro-section";
 import FinancingMap from "@/components/pages/financing-slug-page/financing-map";
 import BreadcrumbPageList from "@/components/layout/breadcrumb-page-list";
-import { getFinancingBySlug } from "@/services/financing-service";
+import { fetchFinancingBySlug } from "@/services/financing-service";
 import { useDomainReceiver } from "@/hooks/use-domain-receiver";
 import { getUnixTimestamp } from "@/utils/utils";
+import { cache } from "react";
 
 export const dynamic = "force-dynamic";
+
+const getFinancingBySlug = cache(async (slug) => {
+    return await fetchFinancingBySlug(slug);
+});
 
 export async function generateMetadata({ params: { slug } }) {
     const desiredFinancing = await getFinancingBySlug(slug);
@@ -17,7 +22,7 @@ export async function generateMetadata({ params: { slug } }) {
     const { data, error } = desiredFinancing.response;
 
     return {
-        title: `Euro Finantare - ${data["name"]}`,
+        title: data["name"],
         description: data["description"],
         openGraph: {
             images: [

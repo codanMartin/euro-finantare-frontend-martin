@@ -6,7 +6,7 @@ import { buildResponse, delay } from "@/utils/utils";
 const standardErrorMessage =
     "Ops! Se pare ca am intampinat o problema. Va rugam sa incercati mai tarziu";
 
-export async function getFinancingListings() {
+export async function fetchFinancingListings() {
     try {
         return buildResponse([...financingListing], null);
     } catch (error) {
@@ -15,7 +15,7 @@ export async function getFinancingListings() {
     }
 }
 
-export async function getFinancingBySlug(slug) {
+export async function fetchFinancingBySlug(slug) {
     try {
         const desiredFinancing = financingListing.find((financing) => financing.slug === slug);
         return buildResponse(desiredFinancing ? desiredFinancing : null, null);
