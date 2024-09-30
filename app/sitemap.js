@@ -11,13 +11,23 @@ export default async function sitemap() {
         financingListData.length > 0
             ? financingListData.map(({ slug }) => ({
                   url: `${process.env.NEXT_PULBIC_BASE_URL}/finantari/${slug}`,
+                  changeFrequency: "always",
               }))
             : [];
 
     return [
-        { url: `${process.env.NEXT_PULBIC_BASE_URL}` },
-        { url: `${process.env.NEXT_PULBIC_BASE_URL}/colectare-date` },
-        { url: `${process.env.NEXT_PULBIC_BASE_URL}/finantari` },
+        {
+            url: `${process.env.NEXT_PULBIC_BASE_URL}`,
+            changeFrequency: "daily",
+        },
+        {
+            url: `${process.env.NEXT_PULBIC_BASE_URL}/colectare-date`,
+            changeFrequency: "weekly",
+        },
+        {
+            url: `${process.env.NEXT_PULBIC_BASE_URL}/finantari`,
+            changeFrequency: "always",
+        },
         ...financingList,
     ];
 }
